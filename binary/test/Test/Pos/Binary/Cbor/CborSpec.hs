@@ -28,10 +28,8 @@ import           Test.QuickCheck.Instances ()
 import qualified Codec.CBOR.FlatTerm as CBOR
 
 import           Pos.Binary.Class
-import           Pos.Util.Chrono (NE, NewestFirst, OldestFirst)
 import           Test.Pos.Binary.Helpers (U, binaryTest, extensionProperty)
 import qualified Test.Pos.Cbor.RefImpl as R
-import           Test.Pos.Util.Chrono ()
 import           Test.Pos.Util.Orphans ()
 import           Test.Pos.Util.QuickCheck.Property (expectationError)
 
@@ -241,11 +239,3 @@ spec = do
                 binaryTest @(HashSet Int)
                 binaryTest @ByteString
                 binaryTest @Text
-
-        describe "Types" $ do
-          -- 100 is not enough to catch some bugs (e.g. there was a bug with
-          -- addresses that only manifested when address's CRC started with 0x00)
-          describe "Bi instances" $ do
-              describe "Util" $ do
-                  binaryTest @(NewestFirst NE U)
-                  binaryTest @(OldestFirst NE U)

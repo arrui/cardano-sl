@@ -18,11 +18,11 @@ import           GHC.Generics (Generic)
 import           Pos.Communication.Types.Protocol (NodeId)
 import           Pos.Core (HeaderHash, ProxySKHeavy)
 import           Pos.Core.Block (Block, BlockHeader, MainBlockHeader)
+import           Pos.Core.Chrono (OldestFirst (..))
 import           Pos.Core.Ssc (InnerSharesMap, Opening, SignedCommitment, VssCertificate)
 import           Pos.Core.Txp (TxAux)
 import           Pos.Core.Update (UpId, UpdateProposal, UpdateVote)
 import           Pos.Reporting.Health.Types (HealthStatus (..))
-import           Pos.Util.Chrono (OldestFirst (..))
 
 import qualified Data.Map.Strict as Map
 

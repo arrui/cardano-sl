@@ -21,12 +21,12 @@ import           Pos.Arbitrary.Ssc ()
 import           Pos.Core (EpochIndex (..), EpochOrSlot (..), HasConfiguration, SlotId (..),
                            VssCertificate (..), getCertId, getVssCertificatesMap, mkVssCertificate,
                            slotSecurityParam)
+import           Pos.Core.Chrono (NewestFirst (..))
 import           Pos.Core.Slotting (flattenEpochOrSlot, unflattenSlotId)
 import           Pos.Crypto (protocolMagic)
 import           Pos.Ssc (SscGlobalState (..), VssCertData (..), delete, empty, expiryEoS, filter,
                           insert, keys, lookup, member, rollbackSsc, runPureToss, setLastKnownSlot,
                           sgsVssCertificates)
-import           Pos.Util.Chrono (NewestFirst (..))
 
 import           Test.Pos.Configuration (withDefConfiguration)
 import           Test.Pos.Util.QuickCheck.Property (qcIsJust)

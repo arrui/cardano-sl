@@ -44,6 +44,7 @@ import           UnliftIO (MonadUnliftIO)
 import           Pos.Binary.Class (serialize')
 import           Pos.Core (Address, Coin, EpochIndex (..), HasConfiguration, HeaderHash,
                            coinToInteger, unsafeAddCoin)
+import           Pos.Core.Chrono (NewestFirst (..))
 import           Pos.Core.Txp (Tx, TxId, TxOut (..), TxOutAux (..))
 import           Pos.DB (DBError (..), DBIteratorClass (..), DBTag (GStateDB), MonadDB,
                          MonadDBRead (dbGet), RocksBatchOp (..), dbIterSource, dbSerializeValue,
@@ -55,7 +56,6 @@ import           Pos.Ssc (HasSscConfiguration)
 import           Pos.Txp.DB (getAllPotentiallyHugeUtxo, utxoSource)
 import           Pos.Txp.GenesisUtxo (genesisUtxo)
 import           Pos.Txp.Toil (GenesisUtxo (..), utxoF, utxoToAddressCoinPairs)
-import           Pos.Util.Chrono (NewestFirst (..))
 import           Pos.Util.Util (maybeThrow)
 
 

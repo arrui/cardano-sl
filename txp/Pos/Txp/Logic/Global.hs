@@ -22,9 +22,10 @@ import qualified Data.HashMap.Strict as HM
 import qualified Data.List.NonEmpty as NE
 import           Formatting (build, sformat, (%))
 
-import           Pos.Core.Block.Union (ComponentBlock (..))
-import           Pos.Core.Class (epochIndexL)
 import           Pos.Core (HasCoreConfiguration, HasGenesisData, HasProtocolMagic)
+import           Pos.Core.Block.Union (ComponentBlock (..))
+import           Pos.Core.Chrono (NE, NewestFirst (..), OldestFirst (..))
+import           Pos.Core.Class (epochIndexL)
 import           Pos.Core.Txp (TxAux, TxUndo, TxpUndo)
 import           Pos.DB (SomeBatchOp (..))
 import           Pos.DB.Class (gsAdoptedBVData)
@@ -41,7 +42,6 @@ import           Pos.Txp.Toil (ExtendedGlobalToilM, GlobalToilEnv (..), GlobalTo
                                UtxoModifier, applyToil, defGlobalToilState, gtsUtxoModifier,
                                rollbackToil, runGlobalToilMBase, runUtxoM, utxoToLookup, verifyToil)
 import           Pos.Util.AssertMode (inAssertMode)
-import           Pos.Util.Chrono (NE, NewestFirst (..), OldestFirst (..))
 import qualified Pos.Util.Modifier as MM
 
 ----------------------------------------------------------------------------
